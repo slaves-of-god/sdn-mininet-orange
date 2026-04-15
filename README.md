@@ -9,7 +9,7 @@
 | **Name** | Sudeeksh Nayak |
 | **SRN** | PES1UG24CS474 |
 | **Section** | 4H |
-| **Course** | Software-Defined Networking |
+
 
 ---
 
