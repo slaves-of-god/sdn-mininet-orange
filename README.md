@@ -154,22 +154,26 @@ For a 100-host network, this eliminates ~99% of ARP-related broadcast traffic af
 ### 1. Controller Logs — MAC Learning & ARP Interception
 Demonstrates initial flood, MAC learning, direct ARP replies, and flow rule pushes.
 
-> *(Screenshot: controller terminal showing ARP table updates and `flow_mod` messages)*
+<img width="884" height="241" alt="Screenshot 2026-04-15 090745" src="https://github.com/user-attachments/assets/b9710583-70a9-4400-b8eb-0a18d750033a" />
+<img width="953" height="928" alt="Screenshot 2026-04-15 090700" src="https://github.com/user-attachments/assets/b426ac6f-4c39-4cac-9db1-815a52c819cd" />
+
 
 ### 2. ICMP Ping Statistics — Latency Drop
 Proves the transition from controller-handled (~1086 ms) to hardware-forwarded (~0.113 ms).
 
-> *(Screenshot: `h1 ping h2` output showing `min/avg/max` statistics)*
+<img width="925" height="272" alt="image" src="https://github.com/user-attachments/assets/ebbd6f0b-70b8-4aa9-9416-2fd2681b2101" />
+
 
 ### 3. OpenFlow Table Dump — `dpctl dump-flows`
 Validates that explicit match/action rules with `idle_timeout=60` are installed on `s1`.
 
-> *(Screenshot: `dpctl dump-flows` output with flow entries)*
+<img width="940" height="273" alt="image" src="https://github.com/user-attachments/assets/14ae15fb-3c22-405d-9231-536423cbe89a" />
+
 
 ### 4. Wireshark Packet Trace
 Captures the wire-level sequence: ARP Broadcast → Controller ARP Reply → ICMP Echo sequence.
+<img width="1822" height="367" alt="image" src="https://github.com/user-attachments/assets/bde266cd-e738-4901-92b3-97bf535d593d" />
 
-> *(Screenshot: Wireshark filter `arp or icmp` showing the handshake)*
 
 ---
 
